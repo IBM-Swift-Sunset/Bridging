@@ -17,7 +17,7 @@
 // This file defines on OSX and iOS the various bridge() functions that are currently
 // only defined in the Linux version of Foundation
 
-#if os(OSX) || os(iOS)
+#if !os(Linux)
 
     import Foundation
 
