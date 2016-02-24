@@ -8,3 +8,7 @@ let myArray: NSArray = ["foo", "bar", "baz"].bridge()
 ... <br /> These limitations should hopefully be very short-term.
 
 In order to compile code that calls `bridge()` functions both on Linux and on other platforms, we provide extensions to NSDictionary, NSArray, NSSet and NSString, to add bridge() functions on non-Linux platforms.
+
+## License
+
+This library is licensed under Apache 2.0. Full license text is available in [LICENSE](LICENSE.txt).
