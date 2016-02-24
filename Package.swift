@@ -25,7 +25,7 @@ let package = Package(
     ],
     dependencies: [ ],
     testDependencies: [
-        .Package(url: "git@github.ibm.com:ibmswift/PhoenixTestFramework.git", majorVersion: 0)
-        ]
+        .Package(url: "https://github.com/IBM-Swift/Kitura-TestFramework.git", versions: Version(0,2,0)..<Version(0,3,0))
+    ]
 )
 
