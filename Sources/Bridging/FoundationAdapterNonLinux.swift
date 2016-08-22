@@ -18,14 +18,15 @@ import Foundation
 
 #if !os(Linux)
 public class FoundationAdapter: FoundationAdapterProtocol {
-    public static func getPath(from url: URL?) -> String? {
-        guard let url = url else {
-            return nil
-        }
+    public static func getPath(from url: URL) -> String? {
         if url.path.isEmpty { // in the old foundation, "" means the conversion to path failed
             return nil
         }
         return url.path
+    }
+
+    public static func deletingLastPathComponent(from url: URL) -> URL {
+        return url.deletingLastPathComponent()
     }
 }
 #endif
