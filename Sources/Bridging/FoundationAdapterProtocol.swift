@@ -20,5 +20,5 @@ import Foundation
 // and the new Foundation on Linux
 // it is called protocol to distinguish it from FoundationAdapter class
 protocol FoundationAdapterProtocol {
-    func getPath(fromURL: URL?) -> String?
+    static func getPath(fromURL: URL?) -> String?
 }
