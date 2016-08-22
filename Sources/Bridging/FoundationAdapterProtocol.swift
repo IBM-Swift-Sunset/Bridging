@@ -16,8 +16,9 @@
 
 import Foundation
 
-// a protocol to compensate for discrepancies between Foundation on macOS and Linux
-// it is called protocol to distinguish it from UnifiedFoundation class
-protocol UnifiedFoundationProtocol {
+// a protocol to compensate for discrepancies between old Foundation on macOS/iOS/tvOS/watchOS
+// and the new Foundation on Linux
+// it is called protocol to distinguish it from FoundationAdapter class
+protocol FoundationAdapterProtocol {
     func getPath(fromURL: URL?) -> String?
 }

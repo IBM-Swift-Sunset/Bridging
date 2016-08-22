@@ -17,7 +17,7 @@
 import Foundation
 
 #if !os(Linux)
-class UnifiedFoundationNonLinux: UnifiedFoundationProtocol {
+class FoundationAdapterNonLinux: FoundationAdapterProtocol {
     func getPath(fromURL url: URL?) -> String? {
         guard let url = url else {
             return nil

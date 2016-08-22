@@ -16,12 +16,12 @@
 
 import Foundation
 
-// a singleton to compensate for discrepancies between Foundation on macOS and Linux
-class UnifiedFoundation {
+//singleton to compensate for discrepancies between Foundation on macOS/iOS/watchOS/tvOS and Linux
+class FoundationAdapter {
 
 #if os(Linux)
-    let sharedInstance = UnifiedFoundationLinux()
+    let sharedInstance = FoundationAdapterLinux()
 #else
-    let sharedInstance = UnifiedFoundationNonLinux()
+    let sharedInstance = FoundationAdapterNonLinux()
 #endif
 }

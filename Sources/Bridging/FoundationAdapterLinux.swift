@@ -15,8 +15,9 @@
  **/
 
 import Foundation
+
 #if os(Linux)
-class UnifiedFoundationLinux: UnifiedFoundationProtocol {
+class FoundationAdapterLinux: FoundationAdapterProtocol {
     func getPath(fromURL url: URL?) -> String? {
         return url?.path
     }
