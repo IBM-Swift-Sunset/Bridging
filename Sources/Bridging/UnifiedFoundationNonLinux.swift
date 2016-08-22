@@ -18,7 +18,13 @@ import Foundation
 
 #if !os(Linux)
 class UnifiedFoundationNonLinux: UnifiedFoundationProtocol {
-    func getPath(fromURL url: URL) -> String? {
+    func getPath(fromURL url: URL?) -> String? {
+        guard let url = url else {
+            return nil
+        }
+        if url.path.isEmpty { // in the old foundation, "" means the conversion to path failed
+            return nil
+        }
         return url.path
     }
 }
