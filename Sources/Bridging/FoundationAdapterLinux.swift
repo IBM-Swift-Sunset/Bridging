@@ -21,14 +21,5 @@ public class FoundationAdapter: FoundationAdapterProtocol {
     public static func getPath(from url: URL) -> String? {
         return url.path
     }
-    public static func deletingLastPathComponent(from url: URL) -> URL {
-        do {
-            return try url.deletingLastPathComponent()
-        } catch {
-            print("Got error from URL.deletingLastPathComponent(): \(error)")
-            // this is how the error will be handled in 08.15 snapshot
-            return url
-        }
-    }
 }
 #endif

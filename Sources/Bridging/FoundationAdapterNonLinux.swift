@@ -24,9 +24,5 @@ public class FoundationAdapter: FoundationAdapterProtocol {
         }
         return url.path
     }
-
-    public static func deletingLastPathComponent(from url: URL) -> URL {
-        return url.deletingLastPathComponent()
-    }
 }
 #endif

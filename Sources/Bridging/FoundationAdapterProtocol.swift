@@ -21,5 +21,4 @@ import Foundation
 // it is called protocol to distinguish it from FoundationAdapter class
 public protocol FoundationAdapterProtocol {
     static func getPath(from: URL) -> String?
-    static func deletingLastPathComponent(from: URL) -> URL
 }
