@@ -16,16 +16,4 @@
 
 import PackageDescription
 
-let package = Package(
-    name: "Bridging",
-          targets: [
-            Target(
-                name: "Bridging",
-                dependencies: [])
-    ],
-    dependencies: [ ],
-    testDependencies: [
-        .Package(url: "https://github.com/IBM-Swift/Kitura-TestFramework.git", versions: Version(0,2,0)..<Version(0,3,0))
-    ]
-)
-
+let package = Package(name: "Bridging")
