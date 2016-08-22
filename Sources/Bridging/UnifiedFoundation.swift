@@ -17,7 +17,8 @@
 import Foundation
 
 // a singleton to compensate for discrepancies between Foundation on macOS and Linux
-struct UnifiedFoundation {
+class UnifiedFoundation {
+
 #if os(Linux)
     let sharedInstance = UnifiedFoundationLinux()
 #else
