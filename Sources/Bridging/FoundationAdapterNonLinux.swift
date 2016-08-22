@@ -17,8 +17,8 @@
 import Foundation
 
 #if !os(Linux)
-class FoundationAdapter: FoundationAdapterProtocol {
-    static func getPath(fromURL url: URL?) -> String? {
+public class FoundationAdapter: FoundationAdapterProtocol {
+    public static func getPath(fromURL url: URL?) -> String? {
         guard let url = url else {
             return nil
         }

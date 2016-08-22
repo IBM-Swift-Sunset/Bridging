@@ -19,6 +19,6 @@ import Foundation
 // a protocol to compensate for discrepancies between old Foundation on macOS/iOS/tvOS/watchOS
 // and the new Foundation on Linux
 // it is called protocol to distinguish it from FoundationAdapter class
-protocol FoundationAdapterProtocol {
+public protocol FoundationAdapterProtocol {
     static func getPath(fromURL: URL?) -> String?
 }
