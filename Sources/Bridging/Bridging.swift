@@ -53,12 +53,6 @@
 
     // String related _bridgeToSwift() functions
 
-    public extension String {
-        func _bridgeToObjectiveC() -> NSString {
-            return self as NSString
-        }
-    }
-
     public extension NSString {
         func _bridgeToSwift() -> String {
             return self as String
