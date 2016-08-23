@@ -18,7 +18,7 @@ import Foundation
 
 #if os(Linux)
 public class FoundationAdapter: FoundationAdapterProtocol {
-    typealias RegularExpression = RegularExpression
+    typealias RegularExpression = Foundation.RegularExpression
 
     public static func getPath(from url: URL) -> String? {
         return url.path
