@@ -27,5 +27,9 @@ public class FoundationAdapter: FoundationAdapterProtocol {
         }
         return url.path
     }
+
+    public static func getNumberFormatterPercentStyle() -> NumberFormatter.Style {
+        return .percent
+    }
 }
 #endif
