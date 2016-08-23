@@ -19,6 +19,7 @@ import Foundation
 #if os(Linux)
 public class FoundationAdapter: FoundationAdapterProtocol {
     public typealias RegularExpression = Foundation.RegularExpression
+    public typealias NSMatchingOptions = Foundation.NSMatchingOptions
 
     public static func getPath(from url: URL) -> String? {
         return url.path
