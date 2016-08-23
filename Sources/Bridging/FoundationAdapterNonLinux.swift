@@ -18,6 +18,8 @@ import Foundation
 
 #if !os(Linux)
 public class FoundationAdapter: FoundationAdapterProtocol {
+    typealias RegularExpression = NSRegularExpression
+
     public static func getPath(from url: URL) -> String? {
         if url.path.isEmpty { // in the old foundation, "" means the conversion to path failed
             return nil
