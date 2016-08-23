@@ -14,55 +14,55 @@
  * limitations under the License.
  **/
 
-// This file defines on OSX and iOS the various bridge() functions that are currently
+// This file defines on OSX and iOS the various _bridgeToSwift() functions that are currently
 // only defined in the Linux version of Foundation
 
 #if !os(Linux)
 
     import Foundation
 
-    // Array related bridge() functions
+    // Array related _bridgeToSwift() functions
 
 //    extension Array {
-//        public func bridge() -> NSArray {
+//        public func _bridgeToSwift() -> NSArray {
 //            return NSArray(array: map { return $0 as Any } )
 //        }
 //    }
 
     extension NSArray {
-        public func bridge() -> Array<AnyObject> {
+        public func _bridgeToSwift() -> Array<AnyObject> {
             return self as Array<AnyObject>
         }
     }
 
 
-    // Dictionary related bridge() functions
+    // Dictionary related _bridgeToSwift() functions
 
 //    extension Dictionary {
-//        public func bridge() -> NSDictionary {
+//        public func _bridgeToSwift() -> NSDictionary {
 //            return [NSObject : AnyObject](dictionaryLiteral: self)
 //        }
 //    }
 
     extension NSDictionary {
-        public func bridge() -> [NSObject: AnyObject] {
+        public func _bridgeToSwift() -> [NSObject: AnyObject] {
             return self as [NSObject: AnyObject]
         }
     }
 
 
-    // String related bridge() functions
+    // String related _bridgeToSwift() functions
 
     public extension String {
-        func bridge() -> NSString {
+        func _bridgeToObjectiveC() -> NSString {
             return self as NSString
         }
     }
 
     public extension NSString {
-        func bridge() -> String {
+        func _bridgeToSwift() -> String {
             return self as String
         }
     }
-    
+
 #endif
