@@ -28,10 +28,6 @@ public class FoundationAdapter: FoundationAdapterProtocol {
         return url.path
     }
 
-    public static func getNumberFormatterPercentStyle() -> NumberFormatter.Style {
-        return .percent
-    }
-
     public static func getBundle(for aClass: AnyClass) -> Bundle {
         return Bundle(for: aClass)
     }

@@ -25,10 +25,6 @@ public class FoundationAdapter: FoundationAdapterProtocol {
         return url.path
     }
 
-    public static func getNumberFormatterPercentStyle() -> NumberFormatter.Style {
-        return .percentStyle
-    }
-
     public static func getBundle(for aClass: AnyClass) -> Bundle {
         // Bundle(for:) is not yet implemented on Linux
         //TODO remove this ifdef once Bundle(for:) is implemented
