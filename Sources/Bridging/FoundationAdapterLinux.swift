@@ -36,7 +36,7 @@ public class FoundationAdapter: FoundationAdapterProtocol {
 
         // meanwhile return a Bundle whose resource path points to /Resources directory
         //     inside the resourcePath of Bundle.main (e.g. .build/debug/Resources)
-        Bundle(path: (Bundle.main.resourcePath ?? ".") + "/Resources") ?? Bundle.main
+        return Bundle(path: (Bundle.main.resourcePath ?? ".") + "/Resources") ?? Bundle.main
     }
 }
 #endif
