@@ -25,4 +25,5 @@ import Foundation
 public protocol FoundationAdapterProtocol {
     static func getPath(from: URL) -> String?
     static func getNumberFormatterPercentStyle() -> NumberFormatter.Style
+    static func getBundle(for aClass: AnyClass) -> Bundle
 }

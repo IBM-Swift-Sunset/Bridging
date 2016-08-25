@@ -28,5 +28,15 @@ public class FoundationAdapter: FoundationAdapterProtocol {
     public static func getNumberFormatterPercentStyle() -> NumberFormatter.Style {
         return .percentStyle
     }
+
+    public static func getBundle(for aClass: AnyClass) -> Bundle {
+        // Bundle(for:) is not yet implemented on Linux
+        //TODO remove this ifdef once Bundle(for:) is implemented
+        // issue https://bugs.swift.org/browse/SR-953
+
+        // meanwhile return a Bundle whose resource path points to /Resources directory
+        //     inside the resourcePath of Bundle.main (e.g. .build/debug/Resources)
+        Bundle(path: (Bundle.main.resourcePath ?? ".") + "/Resources") ?? Bundle.main
+    }
 }
 #endif
