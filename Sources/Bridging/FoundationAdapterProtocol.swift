@@ -14,6 +14,15 @@
  * limitations under the License.
  **/
 
-import PackageDescription
+import Foundation
 
-let package = Package(name: "Bridging")
+// a protocol to compensate for discrepancies between old Foundation on macOS/iOS/tvOS/watchOS
+// and the new Foundation on Linux
+// it is called protocol to distinguish it from FoundationAdapter class
+// it is a random collection of methods used in various IBM@Swift repositories
+// it is not itended to contain an exhaustive list of discrepancies
+
+public protocol FoundationAdapterProtocol {
+    static func getPath(from: URL) -> String?
+    static func getBundle(for aClass: AnyClass) -> Bundle
+}

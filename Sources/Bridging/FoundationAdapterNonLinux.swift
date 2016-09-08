@@ -14,6 +14,22 @@
  * limitations under the License.
  **/
 
-import PackageDescription
+import Foundation
 
-let package = Package(name: "Bridging")
+#if !os(Linux)
+public class FoundationAdapter: FoundationAdapterProtocol {
+    public typealias RegularExpression = NSRegularExpression
+    public typealias NSMatchingOptions = NSRegularExpression.MatchingOptions
+
+    public static func getPath(from url: URL) -> String? {
+        if url.path.isEmpty { // in the old foundation, "" means the conversion to path failed
+            return nil
+        }
+        return url.path
+    }
+
+    public static func getBundle(for aClass: AnyClass) -> Bundle {
+        return Bundle(for: aClass)
+    }
+}
+#endif
