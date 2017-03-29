@@ -32,7 +32,7 @@ public class FoundationAdapter: FoundationAdapterProtocol {
         return Bundle(for: aClass)
     }
 
-    public static func getNSError(from error: Error) -> NSError? {
+    public static func getNSError(from error: Error?) -> NSError? {
         return error as NSError?
     }
 }
