@@ -31,5 +31,9 @@ public class FoundationAdapter: FoundationAdapterProtocol {
     public static func getBundle(for aClass: AnyClass) -> Bundle {
         return Bundle(for: aClass)
     }
+
+    public static func getNSError(from error: Error) -> NSError? {
+        return error as NSError
+    }
 }
 #endif
