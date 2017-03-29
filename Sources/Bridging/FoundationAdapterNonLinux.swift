@@ -33,7 +33,7 @@ public class FoundationAdapter: FoundationAdapterProtocol {
     }
 
     public static func getNSError(from error: Error) -> NSError? {
-        return error as NSError
+        return error as NSError?
     }
 }
 #endif

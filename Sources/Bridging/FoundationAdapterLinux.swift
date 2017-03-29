@@ -39,8 +39,8 @@ public class FoundationAdapter: FoundationAdapterProtocol {
         return Bundle(path: (Bundle.main.resourcePath ?? ".") + "/Resources") ?? Bundle.main
     }
 
-    public static func getNSError(from error: Error) -> NSError? {
-        return error as? NSError
+    public static func getNSError(from error: Error?) -> NSError? {
+	return error as? NSError
     }
 }
 #endif

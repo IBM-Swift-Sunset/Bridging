@@ -25,5 +25,5 @@ import Foundation
 public protocol FoundationAdapterProtocol {
     static func getPath(from: URL) -> String?
     static func getBundle(for aClass: AnyClass) -> Bundle
-    static func getNSError(from: Error) -> NSError?
+    static func getNSError(from: Error?) -> NSError?
 }
