@@ -21,6 +21,10 @@ public class FoundationAdapter: FoundationAdapterProtocol {
     public typealias RegularExpression = NSRegularExpression
     public typealias NSMatchingOptions = NSRegularExpression.MatchingOptions
 
+    /// Return the path component of a URL
+    ///
+    /// - Parameter from: The `URL`
+    /// - Returns: The path component
     public static func getPath(from url: URL) -> String? {
         if url.path.isEmpty { // in the old foundation, "" means the conversion to path failed
             return nil
@@ -28,10 +32,18 @@ public class FoundationAdapter: FoundationAdapterProtocol {
         return url.path
     }
 
+    /// Return the bundle the class belongs to
+    ///
+    /// - Parameter for: The class
+    /// - Returns: The bundle
     public static func getBundle(for aClass: AnyClass) -> Bundle {
         return Bundle(for: aClass)
     }
 
+    /// Converts error to NSError
+    ///
+    /// - Parameter from: The error
+    /// - Returns: The converted `NSError`
     public static func getNSError(from error: Error?) -> NSError? {
         return error as NSError?
     }
