@@ -25,10 +25,18 @@ public class FoundationAdapter: FoundationAdapterProtocol {
     #endif
     public typealias NSMatchingOptions = Foundation.NSMatchingOptions
 
+    /// Return the path component of a URL
+    ///
+    /// - Parameter from: The `URL`
+    /// - Returns: The path component
     public static func getPath(from url: URL) -> String? {
         return url.path
     }
 
+    /// Return the bundle the class belongs to
+    ///
+    /// - Parameter for: The class
+    /// - Returns: The bundle
     public static func getBundle(for aClass: AnyClass) -> Bundle {
         // Bundle(for:) is not yet implemented on Linux
         //TODO remove this ifdef once Bundle(for:) is implemented
@@ -37,6 +45,14 @@ public class FoundationAdapter: FoundationAdapterProtocol {
         // meanwhile return a Bundle whose resource path points to /Resources directory
         //     inside the resourcePath of Bundle.main (e.g. .build/debug/Resources)
         return Bundle(path: (Bundle.main.resourcePath ?? ".") + "/Resources") ?? Bundle.main
+    }
+
+    /// Converts error to NSError
+    ///
+    /// - Parameter from: The error
+    /// - Returns: The converted `NSError`
+    public static func getNSError(from error: Error?) -> NSError? {
+	return error as? NSError
     }
 }
 #endif

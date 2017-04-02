@@ -23,6 +23,21 @@ import Foundation
 // it is not itended to contain an exhaustive list of discrepancies
 
 public protocol FoundationAdapterProtocol {
+    /// Return the path component of a URL
+    ///
+    /// - Parameter from: The `URL`
+    /// - Returns: The path component
     static func getPath(from: URL) -> String?
+
+    /// Return the bundle the class belongs to
+    ///
+    /// - Parameter for: The class
+    /// - Returns: The bundle
     static func getBundle(for aClass: AnyClass) -> Bundle
+
+    /// Converts error to NSError
+    ///
+    /// - Parameter from: The error
+    /// - Returns: The converted `NSError`
+    static func getNSError(from: Error?) -> NSError?
 }
