@@ -45,7 +45,10 @@ public class FoundationAdapter: FoundationAdapterProtocol {
     /// - Parameter from: The error
     /// - Returns: The converted `NSError`
     public static func getNSError(from error: Error?) -> NSError? {
-        return error as NSError?
+        if let error = error {
+            return NSError(domain: error.localizedDescription, code: -1)
+        }
+        return nil
     }
 }
 #endif
