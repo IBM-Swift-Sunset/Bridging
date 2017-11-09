@@ -23,7 +23,11 @@ public class FoundationAdapter: FoundationAdapterProtocol {
     #else
         public typealias RegularExpression = Foundation.RegularExpression
     #endif
-    public typealias NSMatchingOptions = Foundation.NSMatchingOptions
+    #if swift(>=3.2)
+        public typealias NSMatchingOptions = NSRegularExpression.MatchingOptions
+    #else
+        public typealias NSMatchingOptions = Foundation.NSMatchingOptions
+    #endif
 
     /// Return the path component of a URL
     ///
